@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 # Set paths for the training data
 base_dir = '/home/carnd/Data/'
 img_dir = "IMG/"
-csv_file_name = ['driving_log.csv', 'driving_log2.csv', 'driving_log3.csv', 'driving_log4.csv', 'driving_log5.csv', 'driving_log6.csv']
+csv_file_name = ['driving_log.csv', 'driving_log2.csv', 'driving_log3.csv', 'driving_log4.csv', 'driving_log5.csv']
 
 # Load data from csv and images into training and label numpy arrays
 df1 = pd.read_csv(base_dir+csv_file_name[0], header=None)

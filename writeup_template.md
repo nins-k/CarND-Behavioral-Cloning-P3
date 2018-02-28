@@ -12,17 +12,6 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 
-[//]: # (Image References)
-
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
-
 ### Files Submitted & Code Quality
 
 #### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
@@ -53,7 +42,17 @@ The **model.py** contains all the code required to load the training data, creat
 
 The model consists of **three convolutional layers** and **three fully connected layers**. The model was chosen to be sufficiently complex to navigate the tracks, especially given that collecting accurate data was very challenging - (I decided to use only my own data and did not train on the Udacity provided data).
 
-Below is a Keras generated summary representation of the model:
+Below is a diagrammatic representation of the model architecture generated using draw_convnet.<sup>[1](https://github.com/gwding/draw_convnet)
+
+![model_summary](markdown_images/02_model_arch_diagram.png)
+
+Note that this diagram does not illustrate the below listed features:
+* Lambda layer for normalization
+* Cropping layer
+* Activation functions
+* Dropout
+
+All details are included in the Keras generated summary representation of the model:
 
 ![model_summary](markdown_images/01_model_summary.JPG)
 

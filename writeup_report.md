@@ -23,8 +23,6 @@ My project includes the following files:
 * [writeup_report.md](./writeup_report.md) - THIS file is the Write Up report/summary.
 * [P3_Model_Generator.ipynb](./P3_Model_Generator.ipynb) - Additionally, I have included the IPython Notebook I used to write the code.
 
-<hr>
-
 #### 2. Submission includes functional code
 The below code can be used to run the simulator in Autonomous mode with my trained model.
 ```sh
@@ -34,11 +32,11 @@ The driving behaviour of the car is seen to be greatly dependent on the hardware
 
 While running the simulator on a laptop with a GPU, it works fine with the default value of 9. In the submission, the **drive.py** file is included as-is as provided by Udacity without any modification.
 
-<hr>
-
 #### 3. Submission code is usable and readable
 
 The **model.py** contains all the code required to load the training data, create a model and train it using Keras and saving the model to disk. The code is commented with explanation wherever required.
+
+<hr>
 
 ### Model Architecture and Training Strategy
 
@@ -48,15 +46,11 @@ The model consists of **three convolutional layers** and **three fully connected
 
 A detailed explanation of the model with visualization is provided in the following sections.
 
-<hr>
-
 #### 2. Attempts to reduce overfitting in the model
 
 1. **Dropout** is implemented in the three fully connected layers.
 2. **Augmentation** is used by including the left and right camera images for training with a small adjustment of the steering angle.
 3. Further, **Flipping** is done on all the images to increase the data and better generalize it.
-
-<hr>
 
 #### 3. Model parameter tuning
 
@@ -65,11 +59,11 @@ The model uses an Adam optimizer but the initial learning rate was explicitly de
 adam_opt = Adam(lr=0.005)
 ```
 
-<hr>
-
 #### 4. Appropriate training data
 
 The Udacity training data was not used. I wanted to use my own data which I have recorded by attempting to drive along the center. Left and Right camera images were also used for recovery and flipping was done on all images to to counter turn-bias.
+
+<hr>
 
 ### Model Architecture and Training Strategy
 
@@ -105,8 +99,6 @@ earlystop = EarlyStopping(monitor='val_loss', patience=3)
 checkpoint = ModelCheckpoint(filepath, monitor='val_loss', save_best_only=True)
 ```
 
-<hr>
-
 #### 2. Final Model Architecture
 
 Below is a diagrammatic representation of the model architecture generated using draw_convnet.<sup>[[1]](https://github.com/gwding/draw_convnet)
@@ -134,8 +126,6 @@ history = model.fit_generator(train_generator, callbacks=[checkpoint, earlystop]
 			samples_per_epoch=len(data_train), validation_data=valid_generator, 
 			nb_val_samples=len(data_valid), nb_epoch=40)
 ```
-
-<hr>
 
 #### 3. Creation of the Training Set & Training Process
 
@@ -174,6 +164,7 @@ The **EarlyStopping** Keras callback helped to use the most optimum model.
 
 A warning is shown during training because the number of samples is not exactly divisible by the batch size. But this has no effect on the performance and can be ignored.<sup>[[3]](https://stackoverflow.com/questions/41789961/keras-warning-epoch-comprised-more-than-samples-per-epoch-samples)</sup>
 
+<hr>
 
 #### 4. Appendix
 

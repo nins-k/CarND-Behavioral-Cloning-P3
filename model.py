@@ -15,7 +15,7 @@ base_dir = '/home/carnd/Data/'
 img_dir = "IMG/"
 csv_file_name = ['driving_log.csv', 'driving_log2.csv', 'driving_log3.csv', 'driving_log4.csv', 'driving_log5.csv']
 
-# Load data from csv and images into training and label numpy arrays
+# Load data from csv into panda dataframes
 df1 = pd.read_csv(base_dir+csv_file_name[0], header=None)
 df2 = pd.read_csv(base_dir+csv_file_name[1], header=None)
 df3 = pd.read_csv(base_dir+csv_file_name[2], header=None)
